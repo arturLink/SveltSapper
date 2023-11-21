@@ -3,7 +3,7 @@ import * as api from 'api.js';
 export function post(req, res) {
     const user = req.body;
 
-    api.post('users',  user ).then(response => {
+    api.post('user',  user ).then(response => {
         if (response.user) {
             req.session.user = response.user;
         }
@@ -12,4 +12,4 @@ export function post(req, res) {
 
         res.end(JSON.stringify(response));
     });
-}//lol
+}
